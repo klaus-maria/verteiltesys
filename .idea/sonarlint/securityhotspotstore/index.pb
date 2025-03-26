@@ -13,3 +13,9 @@ H
 src/main/java/Actor.java,0\5\0520bf519ea7ff4ed854e95b4d40c13c821f87be
 M
 src/main/java/Connection.java,9\4\9406ec1692813b638179f9930784648af3a56508
+M
+src/main/java/Initialize.java,e\d\ede3df66173b0590450a0c7e7055b73170290588
+K
+src/main/java/Exercise.java,d\9\d995e05c99052f4ec42ff23fa73ea32add694527
+I
+src/main/java/Result.java,1\5\15af779ce47bc6ed7b5fa6ea3e3888cbdb80c39c

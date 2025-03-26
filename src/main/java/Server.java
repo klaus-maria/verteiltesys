@@ -15,13 +15,20 @@ public class Server implements Connection{
         clientSocket = serverSocket.accept();
         out = new PrintWriter(clientSocket.getOutputStream(), true);
         in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
-        String greeting = in.readLine();
-        if ("hello server".equals(greeting)) {
+        parse(in.readLine());
+    }
+
+    private void parse(String string){
+        if ("hello server".equals(string)) {
             out.println("hello client");
         }
         else {
             out.println("unrecognised greeting");
         }
+    }
+
+    public void send(String msg) throws IOException{
+
     }
 
     public void stop() throws IOException {

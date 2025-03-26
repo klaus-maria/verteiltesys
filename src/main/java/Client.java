@@ -18,9 +18,8 @@ public class Client implements Connection{
         in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
     }
 
-    public String sendMessage(String msg) throws IOException {
+    public void send(String msg) throws IOException {
         out.println(msg);
-        return in.readLine();
     }
 
     public void stop() throws IOException {
