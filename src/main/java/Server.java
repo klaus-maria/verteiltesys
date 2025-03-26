@@ -1,12 +1,16 @@
 import java.net.*;
 import java.io.*;
-public class Server {
+public class Server implements Connection{
+    private int port;
     private ServerSocket serverSocket;
     private Socket clientSocket;
     private PrintWriter out;
     private BufferedReader in;
 
-    public void start(int port) throws IOException {
+    public Server(int p){
+        port = p;
+    }
+    public void start() throws IOException {
         serverSocket = new ServerSocket(port);
         clientSocket = serverSocket.accept();
         out = new PrintWriter(clientSocket.getOutputStream(), true);

@@ -9,3 +9,7 @@ I
 src/main/java/Client.java,a\f\afb1b584708e6ac3bfba707cbf2bc88ec58914a5
 J
 src/main/java/Message.java,7\8\7846c008bbd895e9b88a52d8f43bc66b4310ee6c
+H
+src/main/java/Actor.java,0\5\0520bf519ea7ff4ed854e95b4d40c13c821f87be
+M
+src/main/java/Connection.java,9\4\9406ec1692813b638179f9930784648af3a56508
