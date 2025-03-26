@@ -1,2 +1,2 @@
-public class Initialize extends Message{
+public class Initialize implements Message{
 }

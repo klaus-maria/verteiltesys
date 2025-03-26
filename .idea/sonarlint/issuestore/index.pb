@@ -19,3 +19,5 @@ K
 src/main/java/Exercise.java,d\9\d995e05c99052f4ec42ff23fa73ea32add694527
 I
 src/main/java/Result.java,1\5\15af779ce47bc6ed7b5fa6ea3e3888cbdb80c39c
+G
+src/main/java/Task.java,6\e\6ec76782a5f8a7b3c359a6a1837e19469f0a8028

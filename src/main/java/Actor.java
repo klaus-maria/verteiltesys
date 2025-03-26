@@ -26,6 +26,10 @@ public class Actor {
         connection.start();
     }
 
+    public void exercise(Task t, int[][] a, int[][] b){
+        t.perform(a,b);
+    }
+
     public void close() throws IOException {
         connection.stop();
     }

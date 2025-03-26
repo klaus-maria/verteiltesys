@@ -1,2 +1,2 @@
-public abstract class Message {
+public interface Message {
 }

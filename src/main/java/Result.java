@@ -1,2 +1,2 @@
-public class Result  extends Message{
+public class Result  implements Message{
 }

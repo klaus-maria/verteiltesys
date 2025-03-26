@@ -1,2 +1,2 @@
-public class Exercise extends Message{
+public class Exercise implements Message{
 }
