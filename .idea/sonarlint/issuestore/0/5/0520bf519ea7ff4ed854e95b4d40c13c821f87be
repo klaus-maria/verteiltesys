@@ -1,3 +1,7 @@
 
 ]
-java:S1220""Move this file to a named package.8ûÃ‰¤Ý2J$df6b7558-e792-4c10-a25f-6e011424f5a7
+java:S1220""Move this file to a named package.8ãçèµÝ2J$8b219e04-25db-4a08-804d-206d8cda1a38
+Ã
+java:S1186!"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ÖÖÊJ8åçèµÝ2J$f394dc91-fac2-4ce8-9af6-91a9538ada4d
+u
+java:S1144!"3Remove this unused private "connectionLoss" method.(ÖÖÊJ8êçèµÝ2J$cfc68d26-34a0-4118-bc38-bb531167bfb5

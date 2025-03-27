@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Actor {
     private static List<Actor> actorsList = new ArrayList<>();
-    private Connection connection;
+    Connection connection;
 
     private Actor(Connection c){
         connection = c;
@@ -27,7 +27,11 @@ public class Actor {
     }
 
     public void exercise(Task t, int[][] a, int[][] b){
-        t.perform(a,b);
+        t.perform(a, b);
+    }
+
+    private void connectionLoss(){
+
     }
 
     public void close() throws IOException {
