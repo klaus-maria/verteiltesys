@@ -1,30 +1,33 @@
 import java.net.*;
 import java.io.*;
-public class Client implements Connection{
-    private String ip;
-    private int port;
-    private Socket clientSocket;
-    private PrintWriter out;
-    private BufferedReader in;
+import java.util.Random;
 
-    public Client(String ip, int p){
-        this.ip = ip;
-        port = p;
-    }
+public class Client {
+    private static final String MASTER_IP = "127.0.0.1";
+    private static final int PORT = 9120;
+    private static final int SLAVE_ID = new Random().nextInt(1000);
 
-    public void start() throws IOException {
-        clientSocket = new Socket(ip, port);
-        out = new PrintWriter(clientSocket.getOutputStream(), true);
-        in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
-    }
+    public static void start() {
+        try (Socket socket = new Socket(MASTER_IP, PORT)) {
+            System.out.println("Slave " + SLAVE_ID + " verbunden mit Master");
+            ObjectOutputStream out = new ObjectOutputStream(socket.getOutputStream());
+            ObjectInputStream in = new ObjectInputStream(socket.getInputStream());
 
-    public void send(String msg) throws IOException {
-        out.println(msg);
-    }
+            Message initMsg = new Message("Initialize", SLAVE_ID, new byte[0]);
+            out.writeObject(initMsg);
+            out.flush();
 
-    public void stop() throws IOException {
-        in.close();
-        out.close();
-        clientSocket.close();
+            Message msg = (Message) in.readObject();
+            if ("Exercise".equals(msg.type)) {
+                System.out.println("Slave " + SLAVE_ID + " hat Aufgabe erhalten, bearbeitet...");
+                Thread.sleep(1000);
+
+                Message resultMsg = new Message("Result", SLAVE_ID, msg.data);
+                out.writeObject(resultMsg);
+                out.flush();
+            }
+        } catch (IOException | InterruptedException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 }

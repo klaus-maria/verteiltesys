@@ -11,9 +11,7 @@ public class Actor {
     }
 
     public static Actor newMaster(int port){
-        Actor a = new Actor(new Server(port));
-        actorsList.add(a);
-        return a;
+        return new Actor(new Server(port));
     }
 
     public static Actor newWorker(String ip, int port){
@@ -24,6 +22,8 @@ public class Actor {
 
     public void init() throws IOException {
         connection.start();
+        // wait for clients x time if server
+        //client wait for exercise then return
     }
 
     public void exercise(Task t, int[][] a, int[][] b){

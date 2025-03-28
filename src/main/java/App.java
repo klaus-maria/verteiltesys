@@ -18,7 +18,7 @@ public class App {
                 {1, 2, 3},
                 {4, 5, 6},
                 {7, 8, 9}
-        };;
+        };
         int[][] b = {
                 {10, 11, 12},
                 {13, 14, 15},
@@ -36,13 +36,13 @@ public class App {
                                 .map(col -> new int[][]{row, col}))
                         .toList();
 
-                // Print results
                 pairedRowsCols.forEach(p -> Actor.getActorsList()
                         .listIterator().next()
                     .connection.send( new Exercise(p).toString()));
             }
             return new Matrix();
         };
+        
         Actor master = Actor.newMaster(8080);
         Actor worker = Actor.newWorker("localhost", 8080);
 
