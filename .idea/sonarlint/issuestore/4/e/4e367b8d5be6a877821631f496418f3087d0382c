@@ -1,0 +1,12 @@
+
+}
+java:S1141!"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8Ú²½˜Þ2J$22660b2e-4683-4957-923e-f077a84b68fc
+]
+java:S1220""Move this file to a named package.8ÈÎâ—Þ2J$5cb43004-c5c1-44e5-a527-31ad0a9067b9
+r	java:S106"+Replace this use of System.out by a logger.(˜¸Ý³úÿÿÿÿ8ªï“˜Þ2J$cc96dfba-a86e-4fa7-9b91-b2ef8b8c5a86
+r	java:S106)"+Replace this use of System.out by a logger.(ŸÄŸÇþÿÿÿÿ8ªï“˜Þ2J$be20a887-0236-42d8-95c8-f6f56abd2a87
+p	java:S108,")Either remove or fill this block of code.(¿Î”Ìúÿÿÿÿ8ò²½˜Þ2J$88d59760-9a9c-4f8d-83f6-08a8c25138fa
+w
+java:S2864V"4Iterate over the "entrySet" instead of the "keySet".(ÝÎúã8‰Œ•˜Þ2J$5f26e261-3d24-4ae0-8fa8-1ec84e4ee529
+l	java:S106Y"+Replace this use of System.out by a logger.(ªÁá|8ù²½˜Þ2J$c6cf093f-c334-4400-9718-405bed135ffb
+l	java:S106["+Replace this use of System.out by a logger.(š‚Ü(8ù²½˜Þ2J$abb0caed-e77e-40a5-ae1f-6bf745c8b03d
