@@ -1,12 +1,24 @@
 
-}
-java:S1141!"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8Ú²½˜Ş2J$22660b2e-4683-4957-923e-f077a84b68fc
-]
-java:S1220""Move this file to a named package.8ÈÎâ—Ş2J$5cb43004-c5c1-44e5-a527-31ad0a9067b9
-r	java:S106"+Replace this use of System.out by a logger.(˜¸İ³úÿÿÿÿ8ªï“˜Ş2J$cc96dfba-a86e-4fa7-9b91-b2ef8b8c5a86
-r	java:S106)"+Replace this use of System.out by a logger.(ŸÄŸÇşÿÿÿÿ8ªï“˜Ş2J$be20a887-0236-42d8-95c8-f6f56abd2a87
-p	java:S108,")Either remove or fill this block of code.(¿Î”Ìúÿÿÿÿ8ò²½˜Ş2J$88d59760-9a9c-4f8d-83f6-08a8c25138fa
-w
-java:S2864V"4Iterate over the "entrySet" instead of the "keySet".(İÎúã8‰Œ•˜Ş2J$5f26e261-3d24-4ae0-8fa8-1ec84e4ee529
-l	java:S106Y"+Replace this use of System.out by a logger.(ªÁá|8ù²½˜Ş2J$c6cf093f-c334-4400-9718-405bed135ffb
-l	java:S106["+Replace this use of System.out by a logger.(š‚Ü(8ù²½˜Ş2J$abb0caed-e77e-40a5-ae1f-6bf745c8b03d
+g	java:S112+"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8îÜŸğå2
+g	java:S112E"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8îÜŸğå2
+L
+java:S3740m"/Provide the parametrized type for this generic.(¨Èæ¡8îÜŸğå2
+Q
+java:S3740n"/Provide the parametrized type for this generic.(½Ô‚¹ıÿÿÿÿ8îÜŸğå2
+Q
+java:S3740n"/Provide the parametrized type for this generic.(½Ô‚¹ıÿÿÿÿ8îÜŸğå2
+W
+java:S1141!"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8ïÜŸğå2
+7
+java:S1220""Move this file to a named package.8ğÜŸğå2
+L	java:S106"+Replace this use of System.out by a logger.(˜¸İ³úÿÿÿÿ8ûÜŸğå2
+G	java:S106'"+Replace this use of System.out by a logger.(ÄŞ³ƒ8ıÜŸğå2
+J	java:S108)")Either remove or fill this block of code.(¿Î”Ìúÿÿÿÿ8şÜŸğå2
+V
+java:S2864O"4Iterate over the "entrySet" instead of the "keySet".(ÚŠ—›üÿÿÿÿ8İŸğå2
+Q
+java:S2864^"4Iterate over the "entrySet" instead of the "keySet".(Åÿã8‚İŸğå2
+F	java:S106c"+Replace this use of System.out by a logger.(ªÁá|8ƒİŸğå2
+F	java:S106e"+Replace this use of System.out by a logger.(š‚Ü(8ƒİŸğå2
+^
+java:S1126w"AReplace this if-then-else statement by a single return statement.(ÎŸ«Á8…İŸğå2

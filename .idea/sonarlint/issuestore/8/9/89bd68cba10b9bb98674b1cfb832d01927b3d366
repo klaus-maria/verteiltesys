@@ -1,5 +1,8 @@
 
-V
-java:S1220""Move this file to a named package.J$2449f43f-ff0d-4dc5-b4fa-1fca1de876dd
-r	java:S106"+Replace this use of System.out by a logger.( æáÕÿÿÿÿÿ8Ù®¿˜Ş2J$e2dd98b6-1cf0-497c-9bc6-5f91f4b8a4a1
-m	java:S106"+Replace this use of System.out by a logger.(Ú€¹š8Ù®¿˜Ş2J$ec77129a-4703-4460-9412-93f8924c2622
+r
+java:S3740,"/Provide the parametrized type for this generic.(‚çëı8ÁÔìğå2J$c9594807-38d7-4cd5-9213-03b2683838ca
+]
+java:S1220""Move this file to a named package.8ÂÔìğå2J$fcb88db9-b7ba-4d7a-b1c3-bce4de75cf53
+~
+java:S2696"6Make the enclosing method "static" or remove this set.(ëæûÿÿÿÿÿ8×Ôìğå2J$a2661000-4dc9-4527-84c8-025f0dfabdf0
+m	java:S106+"+Replace this use of System.out by a logger.(Ú€¹š8ÛÔìğå2J$8fb72419-60fa-4e44-bff9-c96ea30348de

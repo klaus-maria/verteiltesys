@@ -1,13 +1,0 @@
-
-}
-java:S1141"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8Ùåûëİ2J$e245b4e9-892b-4c87-a1fb-7634302d4368
-]
-java:S1220""Move this file to a named package.8÷ÉŠ¢İ2J$509a31e2-a306-477d-a8e7-29970559d788
-‚
-java:S1118":Add a private constructor to hide the implicit public one.(¡’‚ûÿÿÿÿ8Ê‘‡ìİ2J$0cd76f92-3b0f-4821-8175-16ec0f7b28a0
-r	java:S106"+Replace this use of System.out by a logger.(˜¸İ³úÿÿÿÿ8çåûëİ2J$a5c1cce6-18a9-44d1-98f4-fb2d4981250e
-r	java:S106"+Replace this use of System.out by a logger.(Ğ¥úÍøÿÿÿÿ8îåûëİ2J$250e8b69-0c5d-4aee-89b3-17047c307f7f
-p	java:S108")Either remove or fill this block of code.(¿Î”Ìúÿÿÿÿ8îåûëİ2J$a76693ae-a36c-48a2-be78-1b7b0c263b99
-f
-java:S2119'"Save and re-use this "Random".(šŸ«íøÿÿÿÿ8ºàÿëİ2J$87c2f5df-60b4-476e-a6b4-0c1dd3a590c9
-r	java:S106="+Replace this use of System.out by a logger.(ıİ´·úÿÿÿÿ8ûåûëİ2J$d3bad27a-1a66-4315-81f2-0338d4caeaf4

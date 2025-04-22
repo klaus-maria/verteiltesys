@@ -2,33 +2,50 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.stream.IntStream;
 
 class Worker {
-    private int slaveId;
 
-    public void start(String masterIp, int port) {
+    private static int count = 0;
+    private static String masterIp;
+    private static int port;
+
+    public static void config(String i, int p){
+        masterIp = i;
+        port = p;
+    }
+
+    public static void spawn(int count){
+        for(int i=0; i<count; i++){
+            Worker w = new Worker();
+            w.start();
+        }
+    }
+
+    public void start() {
+        int slaveId = count;
+        count++;
 
         try (Socket socket = new Socket(masterIp, port)) {
             ObjectOutputStream out = new ObjectOutputStream(socket.getOutputStream());
             ObjectInputStream in = new ObjectInputStream(socket.getInputStream());
 
-            Message initMsg = (Message) in.readObject();
-            if ("Initialize".equals(initMsg.type)) {
-                slaveId = initMsg.slaveId;
-                System.out.println("Slave " + slaveId + " verbunden mit Master");
-            }
+            // sends init message (register to Master)
+            Message init = new Message("Init", slaveId, null, null);
+            out.writeObject(init);
+            out.flush();
 
+            // wait for and read exercise
             Message msg = (Message) in.readObject();
             if ("Exercise".equals(msg.type)) {
                 System.out.println("Slave " + slaveId + " hat Aufgabe erhalten, bearbeitet...");
-                int[] resultRow = multiplyRow(msg.data, new int[][] {
-                        {9, 8, 7},
-                        {6, 5, 4},
-                        {3, 2, 1}
-                });
+                ArrayList task = (ArrayList) msg.data;
+                int result = calculate((int[]) task.get(0), (int[]) task.get(1));
 
-                Message resultMsg = new Message("Result", slaveId, msg.row, resultRow);
+                // send message
+                Message resultMsg = new Message("Result", slaveId, msg.pos, result);
                 out.writeObject(resultMsg);
                 out.flush();
             }
@@ -36,11 +53,13 @@ class Worker {
             e.printStackTrace();
         }
     }
-    private int[] multiplyRow(int[] rowData, int[][] matrixB) {
-        return IntStream.range(0, matrixB[0].length)
-                .map(col -> IntStream.range(0, rowData.length)
-                        .map(i -> rowData[i] * matrixB[i][col])
-                        .sum())
-                .toArray();
+    private int calculate(int[] a, int[] b){
+        if (a.length != b.length) {
+            throw new IllegalArgumentException("Arrays must have the same length");
+        }
+        return Arrays.stream(IntStream.range(0, a.length)
+                .map(i -> a[i] * b[i])
+                .toArray())
+                .sum();
     }
 }

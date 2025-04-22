@@ -5,11 +5,11 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.SocketTimeoutException;
 import java.util.*;
+import java.util.stream.IntStream;
 
 class Master {
-    private final List<Socket> slaves = new ArrayList<>();
-    private final Map<Integer, int[]> results = new HashMap<>();
-    private int slaveCounter = 1;
+    private final Map<Integer, Socket> slaves = new HashMap<>();
+    private final Map<int[], Object> results = new HashMap<>();
 
     private final int[][] matrixA = {
             {1, 2, 3},
@@ -33,15 +33,14 @@ class Master {
                 try {
                     Socket slaveSocket = serverSocket.accept();
                     synchronized (slaves) {
-                        slaves.add(slaveSocket);
-                        ObjectOutputStream out = new ObjectOutputStream(slaveSocket.getOutputStream());
-                        Message initMsg = new Message("Initialize", slaveCounter, -1, new int[0]);
-                        out.writeObject(initMsg);
-                        out.flush();
-                        System.out.println("Slave " + slaveCounter + " registriert: " + slaveSocket.getInetAddress());
-                        slaveCounter++;
+                        ObjectInputStream in = new ObjectInputStream(slaveSocket.getInputStream());
+                        Message register = (Message) in.readObject();
+                        slaves.put(register.slaveId, slaveSocket);
+                        System.out.println("Slave " + register.slaveId + " registriert: " + slaveSocket.getInetAddress());
                     }
                 } catch (SocketTimeoutException ignored) {
+                } catch (ClassNotFoundException e) {
+                    throw new RuntimeException(e);
                 }
             }
 
@@ -53,27 +52,36 @@ class Master {
         }
     }
     private void distributeTasks() {
-        int row = 0;
-        for (Socket slave : slaves) {
-            try {
-                ObjectOutputStream out = new ObjectOutputStream(slave.getOutputStream());
-                Message msg = new Message("Exercise", row + 1, row, matrixA[row]);
-                out.writeObject(msg);
-                out.flush();
-                row++;
-            } catch (IOException e) {
-                e.printStackTrace();
+        // check size of matrices
+        if(!checkMatrices(matrixA, matrixB)) return;
+        // iterate over vals in matrices/slaves
+        int slaveId = 0;
+        for(int y=0; y<matrixA.length; y++){
+            for(int x=0; x<matrixA[0].length; x++){
+                Socket slave = slaves.get(slaveId);
+                int[] pos = new int[]{y,x};
+                try {
+                    ObjectOutputStream out = new ObjectOutputStream(slave.getOutputStream());
+                    Message msg = new Message("Exercise", slaveId, pos, packageTask(matrixA, matrixB, pos));
+                    out.writeObject(msg);
+                    out.flush();
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+                slaveId++;
+
             }
         }
         receiveResults();
     }
 
     private void receiveResults() {
-        for (Socket slave : slaves) {
+        for (int slaveId : slaves.keySet()) {
             try {
+                Socket slave = slaves.get(slaveId);
                 ObjectInputStream in = new ObjectInputStream(slave.getInputStream());
                 Message msg = (Message) in.readObject();
-                results.put(msg.row, msg.data);
+                results.put(msg.pos, msg.data);
                 slave.close();
             } catch (IOException | ClassNotFoundException e) {
                 e.printStackTrace();
@@ -83,12 +91,32 @@ class Master {
     }
 
     private void combineResults() {
-        for (int row : results.keySet()) {
-            resultMatrix[row] = results.get(row);
+        for (int[] pos : results.keySet()) {
+            int y = pos[0];
+            int x = pos[1];
+            resultMatrix[y][x] = (int) results.get(pos);
         }
         System.out.println("Ergebnis der Matrixmultiplikation:");
         for (int[] row : resultMatrix) {
             System.out.println(Arrays.toString(row));
         }
+    }
+
+    private int[] getColumn(int[][] matrix, int column) {
+        return Arrays.stream(matrix).mapToInt(ints -> ints[column]).toArray();
+    }
+
+    private ArrayList packageTask(int[][] matrixA, int[][] matrixB, int[] pos){
+        ArrayList task = new ArrayList();
+        int[] column = getColumn(matrixB, pos[0]);
+        int[] row = matrixA[pos[1]];
+        task.add(column);
+        task.add(row);
+        return task;
+    }
+
+    private boolean checkMatrices(int[][] a, int[][] b){
+        if(a.length == b[0].length) return true;
+        return false;
     }
 }
