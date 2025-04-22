@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.stream.IntStream;
 
-class Worker {
+class Worker implements Runnable{
 
     private static int count = 0;
     private static String masterIp;
@@ -20,11 +20,12 @@ class Worker {
     public static void spawn(int count){
         for(int i=0; i<count; i++){
             Worker w = new Worker();
-            w.start();
+            Thread t = new Thread(w);
+            t.start();
         }
     }
 
-    public void start() {
+    public void run() {
         int slaveId = count;
         count++;
 

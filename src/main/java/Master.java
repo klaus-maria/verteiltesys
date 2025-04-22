@@ -7,28 +7,36 @@ import java.net.SocketTimeoutException;
 import java.util.*;
 import java.util.stream.IntStream;
 
-class Master {
+class Master implements Runnable{
     private final Map<Integer, Socket> slaves = new HashMap<>();
     private final Map<int[], Object> results = new HashMap<>();
+    private static int port;
+    private static int maxWorkers;
+    private static int timeout;
 
-    private final int[][] matrixA = {
-            {1, 2, 3},
-            {4, 5, 6},
-            {7, 8, 9}
-    };
-    private final int[][] matrixB = {
-            {9, 8, 7},
-            {6, 5, 4},
-            {3, 2, 1}
-    };
+    private static int[][] matrixA;
+    private static int[][] matrixB;
     private final int[][] resultMatrix = new int[matrixA.length][matrixB[0].length];
 
-    public void start(int port, int maxSlaves, int timeout) {
+    public static void config(int p, int mW, int t, int[][] a, int[][] b){
+        port = p;
+        maxWorkers = mW;
+        timeout = t;
+        matrixA = a;
+        matrixB = b;
+    }
+
+    public static void spawn(){
+        Master m = new Master();
+        Thread t = new Thread(m);
+        t.start();
+    }
+    public void run() {
 
         try (ServerSocket serverSocket = new ServerSocket(port)) {
             System.out.println("Master wartet auf Slaves...");
             long startTime = System.currentTimeMillis();
-            while (System.currentTimeMillis() - startTime < timeout && slaves.size() < maxSlaves) {
+            while (System.currentTimeMillis() - startTime < timeout && slaves.size() < maxWorkers) {
                 serverSocket.setSoTimeout(timeout);
                 try {
                     Socket slaveSocket = serverSocket.accept();

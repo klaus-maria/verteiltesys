@@ -1,24 +1,34 @@
 
-g	java:S112+"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òιόÿÿÿÿ8ξάπε2
-g	java:S112E"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òιόÿÿÿÿ8ξάπε2
-L
-java:S3740m"/Provide the parametrized type for this generic.(¨Θζ΅8ξάπε2
-Q
-java:S3740n"/Provide the parametrized type for this generic.(½Τ‚Ήύÿÿÿÿ8ξάπε2
-Q
-java:S3740n"/Provide the parametrized type for this generic.(½Τ‚Ήύÿÿÿÿ8ξάπε2
-W
-java:S1141!"5Extract this nested try block into a separate method.(΅»Άόωÿÿÿÿ8οάπε2
-7
-java:S1220""Move this file to a named package.8πάπε2
-L	java:S106"+Replace this use of System.out by a logger.(Έέ³ϊÿÿÿÿ8ϋάπε2
-G	java:S106'"+Replace this use of System.out by a logger.(Δή³ƒ8ύάπε2
-J	java:S108)")Either remove or fill this block of code.(ΏΞ”Μϊÿÿÿÿ8ώάπε2
-V
-java:S2864O"4Iterate over the "entrySet" instead of the "keySet".(Ϊ—›όÿÿÿÿ8έπε2
-Q
-java:S2864^"4Iterate over the "entrySet" instead of the "keySet".(Εÿγ8‚έπε2
-F	java:S106c"+Replace this use of System.out by a logger.(ªΑα|8ƒέπε2
-F	java:S106e"+Replace this use of System.out by a logger.(‚ά(8ƒέπε2
-^
-java:S1126w"AReplace this if-then-else statement by a single return statement.(Ξ«Α8…έπε2
+	java:S1123"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òιόÿÿÿÿ8°ϋάρε2J$96b86a54-68f2-4850-8fa1-283907a2156f
+	java:S112M"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òιόÿÿÿÿ8°ϋάρε2J$0ee164ce-80b9-4a0d-981a-8c0d3613c76f
+w
+java:S3740-"/Provide the parametrized type for this generic.(ΨΌΑ£ψÿÿÿÿ8±ϋάρε2J$958d3374-1715-4e7c-b4b1-76f2cd498f96
+w
+java:S3740I"/Provide the parametrized type for this generic.(π­ά¥ώÿÿÿÿ8±ϋάρε2J$8b0f1287-8acb-4f8e-91a5-4065a9fa69c4
+w
+java:S3740I"/Provide the parametrized type for this generic.(π­ά¥ώÿÿÿÿ8±ϋάρε2J$fc2bb5fa-e0ee-4769-8665-885cadabf572
+w
+java:S3740["/Provide the parametrized type for this generic.(΅›βςώÿÿÿÿ8±ϋάρε2J$f86d945b-327c-4e76-99dc-9ed9ed9f016c
+r
+java:S3740u"/Provide the parametrized type for this generic.(¨Θζ΅8±ϋάρε2J$35772b32-8f2a-48e7-aa8f-619130547cd1
+w
+java:S3740v"/Provide the parametrized type for this generic.(½Τ‚Ήύÿÿÿÿ8±ϋάρε2J$c363384a-dcc4-43fb-ab48-b21ce7b6d14d
+w
+java:S3740v"/Provide the parametrized type for this generic.(½Τ‚Ήύÿÿÿÿ8±ϋάρε2J$7db497b7-9ec7-4195-b8b0-1131b82df795
+}
+java:S1141)"5Extract this nested try block into a separate method.(΅»Άόωÿÿÿÿ8²ϋάρε2J$6b115b7a-f36e-4922-854a-41d925948e89
+]
+java:S1220""Move this file to a named package.8³ϋάρε2J$3f3bab3d-1689-4a02-8a94-bb10dc702e25
+r	java:S106%"+Replace this use of System.out by a logger.(Έέ³ϊÿÿÿÿ8γϋάρε2J$856fe208-2905-4fbd-9328-7aef759c66c4
+m	java:S106/"+Replace this use of System.out by a logger.(Δή³ƒ8ζϋάρε2J$918979c4-f82e-49b7-9eb2-e24d1e875f1f
+p	java:S1081")Either remove or fill this block of code.(ΏΞ”Μϊÿÿÿÿ8ζϋάρε2J$d0baea01-b50e-426b-9f75-ffb418651445
+|
+java:S2864W"4Iterate over the "entrySet" instead of the "keySet".(Ϊ—›όÿÿÿÿ8κϋάρε2J$1f3aa0b7-94b7-4cb4-a228-69d271affdaf
+w
+java:S2864f"4Iterate over the "entrySet" instead of the "keySet".(Εÿγ8λϋάρε2J$16a0ad73-1f86-4646-a287-3b8031f4f434
+l	java:S106k"+Replace this use of System.out by a logger.(ªΑα|8λϋάρε2J$e5eae7e0-6086-4465-90aa-4d99deba69ef
+l	java:S106m"+Replace this use of System.out by a logger.(‚ά(8λϋάρε2J$5ed92209-c6ae-4ee5-a5a2-6b5246d0936f
+„
+java:S1126"AReplace this if-then-else statement by a single return statement.(Ξ«Α8ξϋάρε2J$378aa2ff-fda3-400a-b11c-b107d6177444
+
+java:S1128"7Remove this unused import 'java.util.stream.IntStream'.(ΩΙ½ωÿÿÿÿ8ξϋάρε2J$9b440e1e-c27d-443b-a2f3-eecfb9d5301a
