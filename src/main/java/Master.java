@@ -9,8 +9,8 @@ import java.util.stream.IntStream;
 
 class Master implements Runnable{
     private Map<Integer, Socket> slaves = new HashMap<>();
-   // private Map<Integer, ObjectInputStream> inStreams = new HashMap<>();
-   // private Map<Integer, ObjectOutputStream> outStreams = new HashMap<>();
+    private Map<Integer, ObjectInputStream> inStreams = new HashMap<>();
+    private Map<Integer, ObjectOutputStream> outStreams = new HashMap<>();
     private Map<int[], Object> results = new HashMap<>();
     private static int port;
     private static int maxWorkers;
@@ -46,6 +46,7 @@ class Master implements Runnable{
                         ObjectInputStream in = new ObjectInputStream(slaveSocket.getInputStream());
                         Message register = (Message) in.readObject();
                         slaves.put(register.slaveId, slaveSocket);
+                        inStreams.put(register.slaveId, in);
                         System.out.println("Slave " + register.slaveId + " registriert: " + slaveSocket.getInetAddress());
                     }
                 } catch (SocketTimeoutException ignored) {
@@ -73,6 +74,7 @@ class Master implements Runnable{
                 try {
                     ObjectOutputStream out = new ObjectOutputStream(slave.getOutputStream());
                     Message msg = new Message("Exercise", slaveId, pos, packageTask(matrixA, matrixB, pos));
+                    outStreams.put(slaveId, out);
                     out.writeObject(msg);
                     out.flush();
                 } catch (IOException e) {
@@ -90,7 +92,7 @@ class Master implements Runnable{
             try {
                 synchronized (slaves){
                     Socket slave = slaves.get(slaveId);
-                    ObjectInputStream in = new ObjectInputStream(slave.getInputStream());
+                    ObjectInputStream in = inStreams.get(slaveId);
                     Message msg = (Message) in.readObject();
                     results.put(msg.pos, msg.data);
                     slave.close();
@@ -105,8 +107,8 @@ class Master implements Runnable{
 
     private void combineResults() {
         for (int[] pos : results.keySet()) {
-            int y = pos[0];
-            int x = pos[1];
+            int y = pos[1];
+            int x = pos[0];
             resultMatrix[y][x] = (int) results.get(pos);
         }
         System.out.println("Ergebnis der Matrixmultiplikation:");
