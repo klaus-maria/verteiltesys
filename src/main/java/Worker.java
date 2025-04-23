@@ -31,7 +31,6 @@ class Worker implements Runnable{
 
         try (Socket socket = new Socket(masterIp, port)) {
             ObjectOutputStream out = new ObjectOutputStream(socket.getOutputStream());
-            ObjectInputStream in = new ObjectInputStream(socket.getInputStream());
 
             // sends init message (register to Master)
             Message init = new Message("Init", slaveId, null, null);
@@ -39,6 +38,7 @@ class Worker implements Runnable{
             out.flush();
 
             // wait for and read exercise
+            ObjectInputStream in = new ObjectInputStream(socket.getInputStream());
             Message msg = (Message) in.readObject();
             if ("Exercise".equals(msg.type)) {
                 System.out.println("Slave " + slaveId + " hat Aufgabe erhalten, bearbeitet...");

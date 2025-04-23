@@ -8,8 +8,10 @@ import java.util.*;
 import java.util.stream.IntStream;
 
 class Master implements Runnable{
-    private final Map<Integer, Socket> slaves = new HashMap<>();
-    private final Map<int[], Object> results = new HashMap<>();
+    private Map<Integer, Socket> slaves = new HashMap<>();
+   // private Map<Integer, ObjectInputStream> inStreams = new HashMap<>();
+   // private Map<Integer, ObjectOutputStream> outStreams = new HashMap<>();
+    private Map<int[], Object> results = new HashMap<>();
     private static int port;
     private static int maxWorkers;
     private static int timeout;
@@ -86,11 +88,14 @@ class Master implements Runnable{
     private void receiveResults() {
         for (int slaveId : slaves.keySet()) {
             try {
-                Socket slave = slaves.get(slaveId);
-                ObjectInputStream in = new ObjectInputStream(slave.getInputStream());
-                Message msg = (Message) in.readObject();
-                results.put(msg.pos, msg.data);
-                slave.close();
+                synchronized (slaves){
+                    Socket slave = slaves.get(slaveId);
+                    ObjectInputStream in = new ObjectInputStream(slave.getInputStream());
+                    Message msg = (Message) in.readObject();
+                    results.put(msg.pos, msg.data);
+                    slave.close();
+                }
+
             } catch (IOException | ClassNotFoundException e) {
                 e.printStackTrace();
             }

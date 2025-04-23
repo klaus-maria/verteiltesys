@@ -1,4 +1,5 @@
 import java.io.IOException;
+import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
@@ -15,11 +16,19 @@ public class App {
         };
 
         try {
-            Master.config(8080, 9, 1000, matrixA, matrixB);
-            Master.spawn();
+            Scanner scanner = new Scanner(System.in);
 
-            Worker.config("127.0.0.1", 8080);
-            Worker.spawn(9);
+            System.out.println("Starte Server oder Worker (s/w): ");
+            String f = scanner.nextLine();
+
+            if(f.equals("s")){
+                Master.config(8080, 9, 100000, matrixA, matrixB);
+                Master.spawn();
+            }
+            else {
+                Worker.config("127.0.0.1", 8080);
+                Worker.spawn(9);
+            }
 
         } catch (Exception e) {
             throw new RuntimeException(e);
