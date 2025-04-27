@@ -1,34 +1,34 @@
 
-	java:S1126"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8Ó¤Â£æ2J$4bb459c5-45b5-4a8b-a4a3-f52ac5c37c74
-	java:S112Q"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8Ô¤Â£æ2J$a5b978f0-9cdb-4168-a168-b469400e6e23
+	java:S1127"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8—š÷¿ç2J$f5823916-c6e6-4563-b5ac-fd36732657f1
+	java:S112R"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8˜š÷¿ç2J$71879fc7-f35a-478e-8f75-7ed500345bfa
 w
-java:S3740/"/Provide the parametrized type for this generic.(Ø¼Á£øÿÿÿÿ8Õ¤Â£æ2J$b75dfbbc-1faf-4e95-9a75-c6341ca5cce9
+java:S37400"/Provide the parametrized type for this generic.(Ø¼Á£øÿÿÿÿ8™š÷¿ç2J$48fd4c54-756f-4ccb-ab53-f9d562762579
 w
-java:S3740L"/Provide the parametrized type for this generic.(ğ­Ü¥şÿÿÿÿ8Õ¤Â£æ2J$ddfa0ab0-020f-4223-9fe9-2b4648098f8b
+java:S3740M"/Provide the parametrized type for this generic.(ğ­Ü¥şÿÿÿÿ8šš÷¿ç2J$9ff13a2b-24b6-480e-82ad-c81108cff245
 w
-java:S3740L"/Provide the parametrized type for this generic.(ğ­Ü¥şÿÿÿÿ8Õ¤Â£æ2J$79e9f7c9-b0e0-4412-8723-de2f5b22391f
+java:S3740M"/Provide the parametrized type for this generic.(ğ­Ü¥şÿÿÿÿ8šš÷¿ç2J$ba2099d3-b24b-4196-9ed5-11d0d32bd21e
 w
-java:S3740`"/Provide the parametrized type for this generic.(¡›âòşÿÿÿÿ8Õ¤Â£æ2J$d84e4d30-4d63-4a2a-bf40-5bba9f944cd9
-r
-java:S3740|"/Provide the parametrized type for this generic.(¨Èæ¡8Õ¤Â£æ2J$3bf882fa-af1a-44d8-8177-5b3c79bb34e4
-w
-java:S3740}"/Provide the parametrized type for this generic.(½Ô‚¹ıÿÿÿÿ8Õ¤Â£æ2J$012f052f-b14c-447e-b1cd-6a7a3e710d7d
-w
-java:S3740}"/Provide the parametrized type for this generic.(½Ô‚¹ıÿÿÿÿ8Õ¤Â£æ2J$4865d83c-d771-438e-bbc0-da048d0dcb6d
+java:S3740c"/Provide the parametrized type for this generic.(¡›âòşÿÿÿÿ8šš÷¿ç2J$67e2f926-76ef-4a89-b330-ba51716176bf
+s
+java:S3740‰"/Provide the parametrized type for this generic.(¨Èæ¡8šš÷¿ç2J$9a1ae0bc-5127-4227-ac81-9b3ef995ea3f
+x
+java:S3740Š"/Provide the parametrized type for this generic.(½Ô‚¹ıÿÿÿÿ8šš÷¿ç2J$c5e1ba5e-8b89-403e-8315-b9550e901c39
+x
+java:S3740Š"/Provide the parametrized type for this generic.(½Ô‚¹ıÿÿÿÿ8šš÷¿ç2J$19fcdd30-0748-465f-b6b9-dbc236790831
 }
-java:S1141+"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8Ö¤Â£æ2J$14bf809c-adce-4882-be56-610e16fcde3a
+java:S1141,"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8›š÷¿ç2J$609931ad-ae03-454f-90ba-9a2566098a81
 ]
-java:S1220""Move this file to a named package.8Ù¤Â£æ2J$4588d5ef-c055-436e-99d4-d9d89543f9dc
-r	java:S106'"+Replace this use of System.out by a logger.(˜¸İ³úÿÿÿÿ8©¥Â£æ2J$856f2fb1-4ab6-478d-986c-c7337fc0da68
-m	java:S1062"+Replace this use of System.out by a logger.(ÄŞ³ƒ8¬¥Â£æ2J$58032061-4423-4eee-b159-24207f716f01
-p	java:S1084")Either remove or fill this block of code.(¿Î”Ìúÿÿÿÿ8­¥Â£æ2J$5d7f2a57-1c19-45e8-a3b1-aee11e6bfec8
+java:S1220""Move this file to a named package.8š÷¿ç2J$b2a3f883-1875-4ed2-ae26-eb8f260f2053
+r	java:S106("+Replace this use of System.out by a logger.(˜¸İ³úÿÿÿÿ8÷š÷¿ç2J$f2ec7d5d-3841-4f4a-a011-a61d235e1353
+m	java:S1063"+Replace this use of System.out by a logger.(ÄŞ³ƒ8úš÷¿ç2J$15e4be3d-9c72-496e-b935-2c2d1b4dfdda
+p	java:S1085")Either remove or fill this block of code.(¿Î”Ìúÿÿÿÿ8ûš÷¿ç2J$88143821-5650-4691-a57c-66c43c834a6b
 |
-java:S2864["4Iterate over the "entrySet" instead of the "keySet".(ÚŠ—›üÿÿÿÿ8²¥Â£æ2J$a94d6abb-84f9-4e14-9194-83cf7bb536fb
+java:S2864^"4Iterate over the "entrySet" instead of the "keySet".(ÚŠ—›üÿÿÿÿ8›÷¿ç2J$fe7e1e38-7bec-4705-b07b-a0e9a0e3f4f7
 w
-java:S2864m"4Iterate over the "entrySet" instead of the "keySet".(Åÿã8´¥Â£æ2J$b33033dd-261e-45d1-829d-e504b3f64d6b
-l	java:S106r"+Replace this use of System.out by a logger.(ªÁá|8´¥Â£æ2J$4b5735e0-f43b-445f-82c9-c29a56a42fdb
-l	java:S106t"+Replace this use of System.out by a logger.(š‚Ü(8´¥Â£æ2J$24ca4b96-4373-4afd-82a5-53fc67adcfd1
+java:S2864z"4Iterate over the "entrySet" instead of the "keySet".(Åÿã8ƒ›÷¿ç2J$a9c9c8e3-286b-48c9-ba3c-209bcf69558b
+l	java:S106"+Replace this use of System.out by a logger.(ªÁá|8„›÷¿ç2J$d8bf35ab-e601-4f61-a5ec-c2a3f6d5e62d
+m	java:S106"+Replace this use of System.out by a logger.(š‚Ü(8„›÷¿ç2J$42359adb-b7ff-4aa7-9ca1-3fe8d100e5bf
 …
-java:S1126†"AReplace this if-then-else statement by a single return statement.(ÎŸ«Á8¸¥Â£æ2J$2506ea4f-70b7-40ac-b810-be9193860654
+java:S1126“"AReplace this if-then-else statement by a single return statement.(ÎŸ«Á8‡›÷¿ç2J$e26e9b23-0c2d-4962-9747-4423219d247c
 
-java:S1128"7Remove this unused import 'java.util.stream.IntStream'.(ÙÉ½Ÿùÿÿÿÿ8¹¥Â£æ2J$46116540-7081-4d8f-81e0-9be73d39c952
+java:S1128"7Remove this unused import 'java.util.stream.IntStream'.(ÙÉ½Ÿùÿÿÿÿ8ˆ›÷¿ç2J$caba64f4-c9db-4e0d-a08c-e1895a9cf348

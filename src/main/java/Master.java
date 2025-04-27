@@ -11,6 +11,7 @@ class Master implements Runnable{
     private Map<Integer, Socket> slaves = new HashMap<>();
     private Map<Integer, ObjectInputStream> inStreams = new HashMap<>();
     private Map<Integer, ObjectOutputStream> outStreams = new HashMap<>();
+    private ArrayList<Integer> recieved = new ArrayList<>();
     private Map<int[], Object> results = new HashMap<>();
     private static int port;
     private static int maxWorkers;
@@ -88,20 +89,32 @@ class Master implements Runnable{
     }
 
     private void receiveResults() {
-        for (int slaveId : slaves.keySet()) {
-            try {
-                synchronized (slaves){
-                    Socket slave = slaves.get(slaveId);
-                    ObjectInputStream in = inStreams.get(slaveId);
-                    Message msg = (Message) in.readObject();
-                    results.put(msg.pos, msg.data);
-                    slave.close();
-                }
+        long startTime = System.currentTimeMillis();
+        while(System.currentTimeMillis() - startTime < timeout){ //check until time runs out
+            for (int slaveId : slaves.keySet()) {
+                try {
+                    if(!recieved.contains(slaveId)) { //only check if not already recieved
+                        Socket slave = slaves.get(slaveId);
+                        ObjectInputStream in = inStreams.get(slaveId);
+                        Message msg = (Message) in.readObject();
+                        results.put(msg.pos, msg.data);
+                        recieved.add(slaveId);
+                        slave.close();
+                    }
 
-            } catch (IOException | ClassNotFoundException e) {
-                e.printStackTrace();
+                } catch (IOException | ClassNotFoundException e) {
+                    e.printStackTrace();
+                }
             }
         }
+        checkResults();
+    }
+
+    private void checkResults(){
+        // check if all slaveIds in recieved arralist
+        //if missing -> assign task to random of completed and remove from list
+        // recieveResults again
+        // if good ->
         combineResults();
     }
 
