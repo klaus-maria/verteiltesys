@@ -1,34 +1,36 @@
 
-	java:S1127"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8—š÷¿ç2J$f5823916-c6e6-4563-b5ac-fd36732657f1
-	java:S112R"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8˜š÷¿ç2J$71879fc7-f35a-478e-8f75-7ed500345bfa
-w
-java:S37400"/Provide the parametrized type for this generic.(Ø¼Á£øÿÿÿÿ8™š÷¿ç2J$48fd4c54-756f-4ccb-ab53-f9d562762579
-w
-java:S3740M"/Provide the parametrized type for this generic.(ğ­Ü¥şÿÿÿÿ8šš÷¿ç2J$9ff13a2b-24b6-480e-82ad-c81108cff245
-w
-java:S3740M"/Provide the parametrized type for this generic.(ğ­Ü¥şÿÿÿÿ8šš÷¿ç2J$ba2099d3-b24b-4196-9ed5-11d0d32bd21e
-w
-java:S3740c"/Provide the parametrized type for this generic.(¡›âòşÿÿÿÿ8šš÷¿ç2J$67e2f926-76ef-4a89-b330-ba51716176bf
-s
-java:S3740‰"/Provide the parametrized type for this generic.(¨Èæ¡8šš÷¿ç2J$9a1ae0bc-5127-4227-ac81-9b3ef995ea3f
-x
-java:S3740Š"/Provide the parametrized type for this generic.(½Ô‚¹ıÿÿÿÿ8šš÷¿ç2J$c5e1ba5e-8b89-403e-8315-b9550e901c39
-x
-java:S3740Š"/Provide the parametrized type for this generic.(½Ô‚¹ıÿÿÿÿ8šš÷¿ç2J$19fcdd30-0748-465f-b6b9-dbc236790831
-}
-java:S1141,"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8›š÷¿ç2J$609931ad-ae03-454f-90ba-9a2566098a81
-]
-java:S1220""Move this file to a named package.8š÷¿ç2J$b2a3f883-1875-4ed2-ae26-eb8f260f2053
-r	java:S106("+Replace this use of System.out by a logger.(˜¸İ³úÿÿÿÿ8÷š÷¿ç2J$f2ec7d5d-3841-4f4a-a011-a61d235e1353
-m	java:S1063"+Replace this use of System.out by a logger.(ÄŞ³ƒ8úš÷¿ç2J$15e4be3d-9c72-496e-b935-2c2d1b4dfdda
-p	java:S1085")Either remove or fill this block of code.(¿Î”Ìúÿÿÿÿ8ûš÷¿ç2J$88143821-5650-4691-a57c-66c43c834a6b
-|
-java:S2864^"4Iterate over the "entrySet" instead of the "keySet".(ÚŠ—›üÿÿÿÿ8›÷¿ç2J$fe7e1e38-7bec-4705-b07b-a0e9a0e3f4f7
-w
-java:S2864z"4Iterate over the "entrySet" instead of the "keySet".(Åÿã8ƒ›÷¿ç2J$a9c9c8e3-286b-48c9-ba3c-209bcf69558b
-l	java:S106"+Replace this use of System.out by a logger.(ªÁá|8„›÷¿ç2J$d8bf35ab-e601-4f61-a5ec-c2a3f6d5e62d
-m	java:S106"+Replace this use of System.out by a logger.(š‚Ü(8„›÷¿ç2J$42359adb-b7ff-4aa7-9ca1-3fe8d100e5bf
-…
-java:S1126“"AReplace this if-then-else statement by a single return statement.(ÎŸ«Á8‡›÷¿ç2J$e26e9b23-0c2d-4962-9747-4423219d247c
-
-java:S1128"7Remove this unused import 'java.util.stream.IntStream'.(ÙÉ½Ÿùÿÿÿÿ8ˆ›÷¿ç2J$caba64f4-c9db-4e0d-a08c-e1895a9cf348
+g	java:S1128"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ıÛééç2
+g	java:S112S"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8şÛééç2
+Q
+java:S37401"/Provide the parametrized type for this generic.(Ø¼Á£øÿÿÿÿ8ÿÛééç2
+Q
+java:S3740N"/Provide the parametrized type for this generic.(ğ­Ü¥şÿÿÿÿ8ÿÛééç2
+Q
+java:S3740N"/Provide the parametrized type for this generic.(ğ­Ü¥şÿÿÿÿ8ÿÛééç2
+Q
+java:S3740d"/Provide the parametrized type for this generic.(¡›âòşÿÿÿÿ8ÿÛééç2
+M
+java:S3740‘"/Provide the parametrized type for this generic.(¨Èæ¡8ÿÛééç2
+R
+java:S3740’"/Provide the parametrized type for this generic.(½Ô‚¹ıÿÿÿÿ8ÿÛééç2
+R
+java:S3740’"/Provide the parametrized type for this generic.(½Ô‚¹ıÿÿÿÿ8ÿÛééç2
+W
+java:S1141-"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8€Üééç2
+7
+java:S1220""Move this file to a named package.8Üééç2
+L	java:S106)"+Replace this use of System.out by a logger.(˜¸İ³úÿÿÿÿ8ÒÜééç2
+G	java:S1064"+Replace this use of System.out by a logger.(ÄŞ³ƒ8ÔÜééç2
+J	java:S1086")Either remove or fill this block of code.(¿Î”Ìúÿÿÿÿ8ÕÜééç2
+V
+java:S2864_"4Iterate over the "entrySet" instead of the "keySet".(ÚŠ—›üÿÿÿÿ8ÙÜééç2
+[
+java:S1854x"?Remove this useless assignment to local variable "newAssignee".(¡Ë´n8ÛÜééç2
+L
+java:S1481x"0Remove this unused "newAssignee" local variable.(¡Ë´n8ÜÜééç2
+R
+java:S2864‚"4Iterate over the "entrySet" instead of the "keySet".(Åÿã8àÜééç2
+G	java:S106‡"+Replace this use of System.out by a logger.(ªÁá|8àÜééç2
+G	java:S106‰"+Replace this use of System.out by a logger.(š‚Ü(8àÜééç2
+_
+java:S1126›"AReplace this if-then-else statement by a single return statement.(ÎŸ«Á8ãÜééç2

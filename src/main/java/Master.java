@@ -1,6 +1,7 @@
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.OutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.SocketTimeoutException;
@@ -112,9 +113,16 @@ class Master implements Runnable{
 
     private void checkResults(){
         // check if all slaveIds in recieved arralist
-        //if missing -> assign task to random of completed and remove from list
-        // recieveResults again
-        // if good ->
+        for(Integer x: slaves.keySet()){
+            if(!recieved.contains(x)){
+                // assign task newly to other member
+                Integer newId = Math.random(recieved.stream().min(), recieved.stream().max());
+                ObjectOutputStream newAssignee = outStreams.get(newId);
+                // remove other memeber from recieved ???
+                recieved.remove(newId);
+                // receiveResults again
+            }
+        }
         combineResults();
     }
 
