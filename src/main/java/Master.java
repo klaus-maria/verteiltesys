@@ -60,11 +60,29 @@ class Master implements Runnable{
             }
 
             if (!slaves.isEmpty()) {
-                distributeTasks();
+                sendPeers();
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    private void sendPeers(){
+        // send slaveIds to each slave -> mesh network
+        for(int slaveId: slaves.keySet()){
+            Socket slave = slaves.get(slaveId);
+            try {
+                ObjectOutputStream out = new ObjectOutputStream(slave.getOutputStream());
+                ArrayList ids = new ArrayList(slaves.keySet());
+                Message msg = new Message("Connections", slaveId, null, ids);
+                out.writeObject(msg);
+                out.flush();
+                outStreams.put(slaveId, out);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
+        distributeTasks();
     }
     private void distributeTasks() {
         // check size of matrices
@@ -76,14 +94,14 @@ class Master implements Runnable{
                 Socket slave = slaves.get(slaveId);
                 int[] pos = new int[]{y,x};
                 try {
-                    ObjectOutputStream out = new ObjectOutputStream(slave.getOutputStream());
+                    ObjectOutputStream out = outStreams.get(slaveId);
                     ArrayList task = packageTask(matrixA, matrixB, pos);
                     Message msg = new Message("Exercise", slaveId, pos, task);
-                    outStreams.put(slaveId, out);
                     out.writeObject(msg);
                     out.flush();
                     tasks.put(slaveId, task);
                     positions.put(slaveId, pos);
+                    System.out.println("sent: ID: " + slaveId + " Task: " + task);
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
@@ -96,13 +114,14 @@ class Master implements Runnable{
 
     private void receiveResults() {
         long startTime = System.currentTimeMillis();
-        while(System.currentTimeMillis() - startTime < timeout){ //check until time runs out
+        while(System.currentTimeMillis() - startTime < timeout && results.size() != tasks.size()){ //check until time runs out
             for (int slaveId : slaves.keySet()) {
                 try {
                     if(!recieved.contains(slaveId)) { //only check if not already recieved
                         Socket slave = slaves.get(slaveId);
                         ObjectInputStream in = inStreams.get(slaveId);
                         Message msg = (Message) in.readObject();
+                        System.out.println("recieved: " + msg.slaveId);
                         results.put(msg.pos, msg.data);
                         recieved.add(slaveId);
                         slave.close();
@@ -120,6 +139,7 @@ class Master implements Runnable{
         // check if all slaveIds in recieved arralist
         for(Integer x: slaves.keySet()){
             if(!recieved.contains(x)){
+                System.out.println("missing: " + x);
                 // assign task newly to other member
                 Random rand = new Random();
                 Integer newId = rand.nextInt(Collections.max(recieved) - Collections.min(recieved)) + Collections.min(recieved);
@@ -144,6 +164,7 @@ class Master implements Runnable{
     }
 
     private void combineResults() {
+        System.out.println("combining results");
         for (int[] pos : results.keySet()) {
             int y = pos[1];
             int x = pos[0];

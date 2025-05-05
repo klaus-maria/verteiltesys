@@ -1,18 +1,26 @@
 
 w
-java:S3740$"/Provide the parametrized type for this generic.(”•Âàùÿÿÿÿ8â­ù¢æ2J$91ea43c8-c2ec-43ef-a615-f05e3057b506
+java:S3740"/Provide the parametrized type for this generic.(à¦‘Çüÿÿÿÿ8µãÚ…ê2J$167b617f-5e36-4275-a646-10dc62b79e89
 w
-java:S3740$"/Provide the parametrized type for this generic.(”•Âàùÿÿÿÿ8â­ù¢æ2J$e4ad40f1-f27d-49f5-ad93-2914ea9fb7f3
+java:S3740"/Provide the parametrized type for this generic.(à¦‘Çüÿÿÿÿ8µãÚ…ê2J$53f07f54-ea80-4e4e-853d-c5e08301bba8
 w
-java:S3740*"/Provide the parametrized type for this generic.(¡›âòşÿÿÿÿ8â­ù¢æ2J$3fc399d5-9f81-4403-b0d4-c90197dfb453
+java:S3740&"/Provide the parametrized type for this generic.(”•Âàùÿÿÿÿ8µãÚ…ê2J$f3f1d1bd-4c9d-4ea1-940f-0be42e2b676e
+w
+java:S3740&"/Provide the parametrized type for this generic.(”•Âàùÿÿÿÿ8µãÚ…ê2J$d6940d16-aa34-4271-a87a-e71e87a29d54
+w
+java:S3740/"/Provide the parametrized type for this generic.(¡›âòşÿÿÿÿ8µãÚ…ê2J$eae33e36-9484-42a1-9683-307a40032122
 r
-java:S3740-"/Provide the parametrized type for this generic.(‚çëı8â­ù¢æ2J$b0020f93-e0b8-4452-9bb1-8af144755a48
+java:S37403"/Provide the parametrized type for this generic.(‚çëı8µãÚ…ê2J$91303167-f578-4b5c-aff0-56c74892fa68
 r
-java:S37401"/Provide the parametrized type for this generic.(¯Ê§•8ã­ù¢æ2J$eaf359dd-a5f5-4c5d-b91c-f6258a0952b6
+java:S37407"/Provide the parametrized type for this generic.(¯Ê§•8µãÚ…ê2J$ccc4c509-27b0-4337-b943-172ecba33ecf
 r
-java:S37401"/Provide the parametrized type for this generic.(¯Ê§•8ã­ù¢æ2J$62e1e9a2-cca4-4996-87d5-cb9c85b006ca
+java:S37407"/Provide the parametrized type for this generic.(¯Ê§•8µãÚ…ê2J$1914bf76-c022-4dd0-a11c-f4dbdeb53ec4
 ]
-java:S1220""Move this file to a named package.8£¥öå2J$7b1c4626-6bed-4ef8-a417-d0e33486c420
+java:S1220""Move this file to a named package.8¶ãÚ…ê2J$1c42e2b3-e65d-4611-bf68-34091a5db974
+¢
+java:S1450"ZRemove the "connections" field and declare it as a local variable in the relevant methods.(à¦‘Çüÿÿÿÿ8¿ãÚ…ê2J$d7592e4b-2e02-4e28-bc4b-e5a506236a81
 ~
-java:S2696"6Make the enclosing method "static" or remove this set.(ëæûÿÿÿÿÿ8õ­ù¢æ2J$7e5da83b-4925-4ab3-ac62-67a05650d716
-m	java:S106,"+Replace this use of System.out by a logger.(Ú€¹š8€®ù¢æ2J$ab926f7c-5ade-4c20-b9a2-b146249e5916
+java:S2696"6Make the enclosing method "static" or remove this set.(ëæûÿÿÿÿÿ8ÄãÚ…ê2J$d00f3020-117c-4f9b-9521-fa9d517910bd
+m	java:S1062"+Replace this use of System.out by a logger.(Ú€¹š8ÊãÚ…ê2J$4030e23a-a648-492a-ab5f-0be86f8c5a2c
+m	java:S106>"+Replace this use of System.out by a logger.(Ğñ®8ÊãÚ…ê2J$e7d79e4e-da8b-481d-ad97-23b3f497c2dd
+m	java:S106A"+Replace this use of System.out by a logger.(šì¹8ËãÚ…ê2J$bc7dc525-181f-47bf-8469-0a9fe58fcef3
