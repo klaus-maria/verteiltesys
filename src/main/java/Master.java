@@ -12,6 +12,8 @@ class Master implements Runnable{
     private Map<Integer, Socket> slaves = new HashMap<>();
     private Map<Integer, ObjectInputStream> inStreams = new HashMap<>();
     private Map<Integer, ObjectOutputStream> outStreams = new HashMap<>();
+    private Map<Integer, ArrayList> tasks = new HashMap<>();
+    private Map<Integer, int []> positions = new HashMap<>();
     private ArrayList<Integer> recieved = new ArrayList<>();
     private Map<int[], Object> results = new HashMap<>();
     private static int port;
@@ -75,10 +77,13 @@ class Master implements Runnable{
                 int[] pos = new int[]{y,x};
                 try {
                     ObjectOutputStream out = new ObjectOutputStream(slave.getOutputStream());
-                    Message msg = new Message("Exercise", slaveId, pos, packageTask(matrixA, matrixB, pos));
+                    ArrayList task = packageTask(matrixA, matrixB, pos);
+                    Message msg = new Message("Exercise", slaveId, pos, task);
                     outStreams.put(slaveId, out);
                     out.writeObject(msg);
                     out.flush();
+                    tasks.put(slaveId, task);
+                    positions.put(slaveId, pos);
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
@@ -116,11 +121,23 @@ class Master implements Runnable{
         for(Integer x: slaves.keySet()){
             if(!recieved.contains(x)){
                 // assign task newly to other member
-                Integer newId = Math.random(recieved.stream().min(), recieved.stream().max());
+                Random rand = new Random();
+                Integer newId = rand.nextInt(Collections.max(recieved) - Collections.min(recieved)) + Collections.min(recieved);
                 ObjectOutputStream newAssignee = outStreams.get(newId);
+                ArrayList oldTask = tasks.get(x);
+                int[] oldPos = positions.get(x);
+                Message newTask = new Message("Exercise", newId, oldPos,oldTask);
+                try {
+                    newAssignee.writeObject(newTask);
+                    newAssignee.flush();
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
                 // remove other memeber from recieved ???
+                //remove task, pos, slaveID, in, out of old?
                 recieved.remove(newId);
                 // receiveResults again
+                receiveResults();
             }
         }
         combineResults();
